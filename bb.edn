@@ -1,0 +1,13 @@
+{:deps {io.github.borkdude/quickblog
+        #_"You use the newest SHA here:"
+        {:git/sha "709bccad08e3911ed7af912976684435ce2c1c6a"}}
+ :tasks
+ {:requires ([quickblog.cli :as cli])
+  :init (def opts {:blog-title "Tracy Shields"
+                   :blog-author "Tracy Shields"
+                   :blog-description "A blog of my thoughts in public form"
+                   :out-dir "docs"
+                   :favicon true
+                   :page-suffix ""})
+  quickblog {:doc "Start blogging quickly! Run `bb quickblog help` for details."
+             :task (cli/dispatch opts)}}}
