@@ -1,0 +1,43 @@
+name: Deploy Quickblog to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Or your default branch
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # Or latest stable version
+
+      - name: Setup Babashka
+        uses: turtlequeue/setup-babashka@v1.7.0 # Or latest stable version [23]
+        with:
+          babashka-version: 'latest' # Or pin to a specific version
+
+      - name: Build Quickblog
+        run: bb quickblog-prod render # Assumes 'quickblog-prod render' is your production build task [8]
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3 # Or latest stable version [14, 24, 25]
+        with:
+          path:./docs # This should match your :out-dir in bb.edn [3]
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # Or latest stable version [14, 22, 24, 25]
