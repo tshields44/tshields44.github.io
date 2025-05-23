@@ -3,7 +3,7 @@
   <title>Tracy Shields</title>
   <link href="https://github.com/borkdude/quickblog/atom.xml" rel="self"/>
   <link href="https://github.com/borkdude/quickblog"/>
-  <updated>2025-05-06T19:33:49+00:00</updated>
+  <updated>2025-05-23T17:58:48+00:00</updated>
   <id>https://github.com/borkdude/quickblog</id>
   <author>
     <name>Tracy Shields</name>
@@ -11,8 +11,8 @@
   <entry>
     <id>https://github.com/borkdude/quickblog/my-first-post</id>
     <link href="https://github.com/borkdude/quickblog/my-first-post"/>
-    <title>My First Awesome Post</title>
+    <title>Levers found in Clojureland</title>
     <updated>2025-05-06T23:59:59+00:00</updated>
-    <content type="html"><![CDATA[<p>Write a blog post here!</p>]]></content>
+    <content type="html"><![CDATA[<p>This will be a blog on the different levers I found from learning Clojure.</p>]]></content>
   </entry>
 </feed>
