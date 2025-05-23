@@ -5,7 +5,7 @@
  {:requires ([quickblog.cli :as cli])
   :init (def opts {:blog-title "Tracy Shields"
                    :blog-author "Tracy Shields"
-                   :blog-description "A blog of my thoughts in public form"
+                   :blog-description "A blog on Levers, Randomness, and Joy"
                    :out-dir "docs"
                    :favicon true
                    :page-suffix ""})
